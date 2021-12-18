@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>类型转换</p>
+  <p>1. 数据类型</p>
+  <p>2. 显式类型转换</p>
+  <p>3. 隐式类型转换</p>
+
+  <p>数据类型 分为七种: </p>
+  <p>原始类型: boolean null undefined number string symbol(es6新增数据类型)</p>
+  <p>对象: object</p>
+
+  <p>显式类型转换</p>
+  <p>number函数: (原始类型转换)</p>
+  <p>数值: 转换后是原值</p>
+  <p>字符串: 可被解析的转换为数值，则为NaN，空字符串为0</p>
+  <p>布尔值: true转1， false转0</p>
+  <p>undefined: 转NaN</p>
+  <p>null: 转为0</p>
+  <p>object: 会先调用valueOf方法，如果返回的是原始类型的值，那就按照上面的转换，如果返回是符合类型的值，就继续调用tostring方法，要是返回是原始类型的数值就按照上面转换，返回复合类型值则报错</p>
+
+  <p>string函数: </p>
+  <p>转换出来就是加了一个""</p>
+  <p>object: 会先调用tostring方法，如果返回是复合类型就继续调用valueOf方法，返回是原始类型，就用String方法，不在继续。如果valueOf返回的是复合类型就报错</p>
+
+  <p>boolean函数: </p>
+  <p>undefined、null、-0、+0、NaN、""   一律转换为false</p>
+
+  <p>隐式类型转换: </p>
+  
+
+</body>
+</html>

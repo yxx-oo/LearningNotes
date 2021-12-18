@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>类与实例</p>
+  <p>类的声明</p>
+  <script type="text/javascript">
+    function Animal() {
+      this.name = 'name';
+    }
+    class Animal2 { //es6 的写法
+      constructor() {
+        this.name = 'name';
+      }
+    }
+  </script>
+  <p>生成实例</p>
+  <script>
+    //使用new就实例化一个对象
+    console.log(new Animal(), new Animal2());
+  </script>
+
+  <p>类与继承</p>
+  <p>如何实现继承</p>
+  <script>
+    //1. 借助构造函数实现继承，缺点就是不能够继承父级的原型链上的方法
+    function Parent1() {
+      this.name = 'Parent1';
+    }
+    function Child1() {
+      Parent1.call(this);//call就是把子级的this和父级做绑定
+      this.type = 'Child1';
+    }
+
+    //2.原型链实现继承，缺点就是共用的同一个数据源，当两new的两个对象时，改变其中一个对象的参数，另外一个对象中的参数也会改变
+    function Parent2() {
+      this.name = 'Parent2';
+    }
+    function Child2() {
+      this.type = 'Child2';
+    }
+    Child2.prototype = new Parent2();
+
+    //组合方式，缺点就是多次执行函数中的代码
+    function Parent3() {
+      this.name = 'Parent3';
+    }
+    function Child3() {
+      Parent3.call(this);
+      this.type = 'Child3';
+    }
+    Child3.prototype = new Parent3();
+
+    //组合方式，优化1
+    function Parent4() {
+      this.name = 'Parent4';
+    }
+    function Child4() {
+      Parent4.call(this);
+      this.type = 'Child4';
+    }
+    Child4.prototype = Parent4.prototype;
+
+    //组合方式，优化2
+    function Parent5() {
+      this.name = 'Parent5';
+    }
+    function Child5() {
+      Parent5.call(this);
+      this.type = 'Child5';
+    }
+    Child5.prototype = Object.create(Parent5.prototype);
+    Child5.prototype.constructor = Child5;
+
+  </script>
+  <p>继承的几种方式</p>
+</body>
+</html>

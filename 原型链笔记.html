@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>创建对象的几种方法</p>
+  <p>var a = {a:'1'}  字面量创建方式</p>
+  <p>var a = new Object({a:'1'}) new创建方式</p>
+  <p>var B = function(){this.name = '1'}</p>
+  <p>var b = new B()</p>
+  <p>var P = {name: '1'}</p>
+  <p>var c = Object.create(P)   object.create创建方式</p>
+
+  <img style="width: 520px; height: 240px;" src="/Users/yxx/xiangmu/学习笔记/icon/4421633861176_.pic_hd.jpg">
+  <p>凡是通过new的函数都为构造函数，构造函数是可以使用new来生成一个实例，函数都有一个prototype属性，prototype指的就是原型对象，在声明一个函数的时候，js引擎就会给这个函数一个prototype属性，初始化为一个空对象，也就是这个原型对象</p>
+  <p>原型对象如何区分被哪个构造函数所引用，原型对象中会有constructor构造器，会默认为声明的那个函数</p>
+  <p>也就是函数通过prototype关联原型对象，原型对象通过constructor关联函数，实例通过proto属性关联原型对象</p>
+  <p>原型链就是从一个实例对象往上找构造这个实例的相关联的对象，然后这个关联对象继续往上找创造它的原型对象，一直到object.prototype那么这个原型链就断了，object.prototype也是原型链的顶端</p>
+  <p>当构造函数有多个方法，通过prototype原型链的方式，让其所有的实例公用此构造函数的方法</p>
+
+  <p>instanceof的原理</p>
+  <img style="width: 620px; height: 240px;" src="/Users/yxx/xiangmu/学习笔记/icon/4431633862925_.pic.jpg">
+  <p></p>
+  <p>new运算符工作原理</p>
+  
+</body>
+</html>

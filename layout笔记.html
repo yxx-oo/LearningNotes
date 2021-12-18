@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>layout</title>
+    <style media="screen">
+      html *{
+        padding: 0;
+        margin: 0;
+      }
+      .layout {
+        margin-top: 10px;
+      }
+      .layout article div {
+        min-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!---QA--->
+    <!---当高度撑开以后，flex和table是可以继续使用的--->
+    <!---当高度撑开以后，浮动会超出，是因为浮动的原理就是没有遮挡就超出展示--->
+
+    <!---优点：兼容性很好--->
+    <!---缺点：脱离文档流--->
+    <section class="layout float">
+      <article class="left-right-center">
+        <style class="screen">
+          .layout.float .left {
+            float: left;
+            width: 300px;
+            background: red;
+          }
+          .layout.float .right {
+            float: right;
+            width: 300px;
+            background: blue;
+          }
+          .layout.float .center {
+            background: yellow;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center">
+          <h1>浮动</h1>
+          1. 中间部分
+          2. 中间部分
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+      </article>
+    </section>
+
+    <!---优点：快捷问题少--->
+    <!---缺点：脱离文档流，下面子元素都脱离文档流--->
+    <section class="layout absolute">
+      <article class="left-right-center">
+        <style class="screen">
+          .layout.absolute .left-right-center>div {
+            position: absolute;
+          }
+          .layout.absolute .left {
+            left: 0;
+            width: 300px;
+            background: red;
+          }
+          .layout.absolute .right {
+            right: 0;
+            width: 300px;
+            background: blue;
+          }
+          .layout.absolute .center {
+            left: 300px;
+            right: 300px;
+            background: yellow;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+        <div class="center">
+          <h2>绝对定位</h1>
+          1. 中间部分
+          2. 中间部分
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+      </article>
+      </article>
+    </section>
+
+    <!---优点：--->
+    <!---缺点：ie8不支持flex布局--->
+    <section class="layout flexbox">
+      <article class="left-right-center">
+        <style class="screen">
+          .layout.flexbox {
+            margin-top: 120px;
+          }
+          .layout.flexbox .left-right-center {
+            display: flex;
+          }
+          .layout.flexbox .left {
+            width: 300px;
+            background: red;
+          }
+          .layout.flexbox .right {
+            width: 300px;
+            background: blue;
+          }
+          .layout.flexbox .center {
+            flex: 1;
+            background: yellow;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>flexbox</h1>
+          1. 中间部分
+          2. 中间部分
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+      </article>
+    </section>
+
+    <!---优点：兼容性很好--->
+    <!---缺点：--->
+    <section class="layout table">
+      <article class="left-right-center">
+        <style class="screen">
+          .layout.table .left-right-center {
+            width: 100%;
+            display: table;
+            height: 100px;
+          }
+          .layout.table .left-right-center>div {
+            display: table-cell;
+          }
+          .layout.table .left {
+            width: 300px;
+            background: red;
+          }
+          .layout.table .right {
+            width: 300px;
+            background: blue;
+          }
+          .layout.table .center {
+            background: yellow;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>表格</h1>
+          1. 中间部分
+          2. 中间部分
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+      </article>
+    </section>
+
+    <!---优点：代码简化--->
+    <!---缺点：--->
+    <section class="layout grid">
+      <article class="left-right-center">
+        <style class="screen">
+          .layout.grid .left-right-center {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 100px;
+            grid-template-columns: 300px auto 300px;
+          }
+          .layout.grid .left {
+            background: red;
+          }
+          .layout.grid .right {
+            background: blue;
+          }
+          .layout.grid .center {
+            background: yellow;
+          }
+        </style>
+        <div class="left"></div>
+        <div class="center">
+          <h2>网格</h1>
+          1. 中间部分
+          2. 中间部分
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+          <p>中间部分</p>
+        </div>
+        <div class="right"></div>
+      </article>
+      </article>
+    </section>
+  </body>
+</html>

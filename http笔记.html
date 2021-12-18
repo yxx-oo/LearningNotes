@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>HTTP协议主要特点你</p>
+  <p>简单快捷 灵活: 通过一个header传输各种类型数据 无连接:连接一个就断掉 无状态:区分不了两次连接者身份</p>
+
+  <p>HTTP报文的组成部分</p>
+  <p>组成部分 = 请求报文+相应报文</p>
+  <p>请求报文: 请求行（http方法、页面地址、http协议、版本）、请求头（key，value值请求内容）、空行（）、请求体</p>
+  <p>相应报文: 状态行、响应头、空行、响应体</p>
+
+  <p>HTTP方法</p>
+  <p>GET     获取资源</p>
+  <P>POST    传输资源</P>
+  <p>PUT     更新资源</p>
+  <P>DELETE  删除资源</P>
+  <P>HEAD    获得报文首部</P>
+
+  <p>POST和GET的区别</p>
+  <p>get请求会自动缓存，post不会</p>
+  <p>get只能进行url编码，post支持比较多</p>
+  <p>get请求参数会被保留在历史记录中，post参数不会保留</p>
+  <p>get请求参数长度有限制大概是2kb，浏览器会截断，post没有限制</p>
+  <p>get参数直接暴露在url上，不能有敏感信息，不够安全</p>
+  <p>get在浏览器回退时不会再次提交，post会重新提交</p>
+
+  <p>HTTP状态码</p>
+  <p>1xx: 指示信息-表示请求已接收，继续处理</p>
+  <p>2xx: 成功-请求已经成功接收</p>
+  <p>3xx: 重定向-要完成请求必须进行进步一操作</p>
+  <p>4xx: 客户端错误-请求有语法错误或者请求无法实现</p>
+  <p>5xx: 服务器错误-服务器未能实现合法请求</p>
+  <p>200 请求成功</p>
+  <p>206 发送一个带range头的get请求，range表示是请求范围，例如视频播放</p>
+  <p>301 所有的请求页面转至新的url</p>
+  <p>302 是临时重定向</p>
+  <p>304 否是有缓存可用</p>
+  <p>404 不能被服务器理解</p>
+  <p>401 请求未经授权</p>
+  <p>403 请求页面被禁止访问</p>
+  <p>404 资源不存在</p>
+  <p>500 服务器错误</p>
+  <p>503 服务器宕机</p>
+  
+  <p>什么是持久连接</p>
+  <p>http1.1版本才支持持久链接</p>
+
+  <p>什么是管线化</p>
+  <p>一个多个请求打包过去，然后一个返回回来，此过程也是持久化连接</p>
+  <p>只有get和head请求可以进行管线化</p>
+</body>
+</html>

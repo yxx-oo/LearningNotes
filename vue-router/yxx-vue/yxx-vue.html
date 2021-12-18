@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <title>Document</title> 
+  </head> 
+  <body>  
+    <div id="app">    
+      <p>{{counter}}</p>
+      <p y-text="counter"></p>
+      <p y-html="desc"></p>
+      <p>{{name}}</p>
+    </div>
+    <script src="./yxxVue.js"></script>
+    <script>    
+      const app = new YXXVue({      
+        el:'#app',      
+        data: {        
+          counter: 1,
+          name:111,
+          desc:'<p>aaa<span style="color:red">djfkjdsk</span></p>'      
+        },    
+      })    
+      setInterval(() => {      
+        app.counter++
+        app.name++    
+      }, 1000);      
+    </script> 
+  </body> 
+</html>
